@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/T01.01-Exercise-CreateLayout/app/build/generated/source/r/androidTest/androidTest.iml" filepath="$PROJECT_DIR$/T01.01-Exercise-CreateLayout/app/build/generated/source/r/androidTest/androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T01.01-Exercise-CreateLayout/app/build/generated/source/buildConfig/androidTest/androidTest1.iml" filepath="$PROJECT_DIR$/T01.01-Exercise-CreateLayout/app/build/generated/source/buildConfig/androidTest/androidTest1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T01.01-Exercise-CreateLayout/app/build/generated/source/buildConfig/buildConfig.iml" filepath="$PROJECT_DIR$/T01.01-Exercise-CreateLayout/app/build/generated/source/buildConfig/buildConfig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T01.01-Exercise-CreateLayout/app/build/intermediates/manifest/androidTest/debug/debug.iml" filepath="$PROJECT_DIR$/T01.01-Exercise-CreateLayout/app/build/intermediates/manifest/androidTest/debug/debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T01.01-Solution-CreateLayout/app/src/main/main.iml" filepath="$PROJECT_DIR$/T01.01-Solution-CreateLayout/app/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T01.02-Solution-DisplayToyList/app/src/main/main1.iml" filepath="$PROJECT_DIR$/T01.02-Solution-DisplayToyList/app/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T01.02-Exercise-DisplayToyList/app/src/main/main2.iml" filepath="$PROJECT_DIR$/T01.02-Exercise-DisplayToyList/app/src/main/main2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T01.03-Exercise-AddScrolling/app/src/main/main3.iml" filepath="$PROJECT_DIR$/T01.03-Exercise-AddScrolling/app/src/main/main3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T01.03-Solution-AddScrolling/app/src/main/main4.iml" filepath="$PROJECT_DIR$/T01.03-Solution-AddScrolling/app/src/main/main4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T01.01-Exercise-CreateLayout/app/src/main/main5.iml" filepath="$PROJECT_DIR$/T01.01-Exercise-CreateLayout/app/src/main/main5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/T01.01-Exercise-CreateLayout/app/build/generated/source/r/r.iml" filepath="$PROJECT_DIR$/T01.01-Exercise-CreateLayout/app/build/generated/source/r/r.iml" />
+    </modules>
+  </component>
+</project>
