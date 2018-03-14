@@ -165,7 +165,8 @@ public class MainActivity extends AppCompatActivity implements
     public Loader<String> onCreateLoader(int id, final Bundle args) {
         return new AsyncTaskLoader<String>(this) {
 
-            // TODO (1) Create a String member variable called mGithubJson that will store the raw JSON
+            // COMPLETED (1) Create a String member variable called mGithubJson that will store the raw JSON
+            String mGithibJson;
 
             @Override
             protected void onStartLoading() {
@@ -181,9 +182,14 @@ public class MainActivity extends AppCompatActivity implements
                  */
                 mLoadingIndicator.setVisibility(View.VISIBLE);
 
-                // TODO (2) If mGithubJson is not null, deliver that result. Otherwise, force a load
-                forceLoad();
-            }
+                // COMPLETED (2) If mGithubJson is not null, deliver that result. Otherwise, force a load
+                if ( mGithibJson != null ) {
+                    deliverResult(mGithibJson);
+                } else {
+                    forceLoad();
+                  }
+                }
+
 
             @Override
             public String loadInBackground() {
@@ -207,8 +213,15 @@ public class MainActivity extends AppCompatActivity implements
                 }
             }
 
-            // TODO (3) Override deliverResult and store the data in mGithubJson
-            // TODO (4) Call super.deliverResult after storing the data
+            // COMPLETED (3) Override deliverResult and store the data in mGithubJson
+            @Override
+            public void deliverResult(String githubJson) {
+                mGithibJson = githubJson;
+                super.deliverResult(githubJson);
+
+            }
+
+            // COMPLETED (4) Call super.deliverResult after storing the data
         };
     }
 
