@@ -86,14 +86,11 @@ public class TaskContentProvider extends ContentProvider {
         // Get access to the task database (to write new data to)
         final SQLiteDatabase db = mTaskDbHelper.getWritableDatabase();
 
-        // Write URI matching code to identify the match for the tasks directory
         int match = sUriMatcher.match(uri);
-        Uri returnUri; // URI to be returned
+        Uri returnUri;
 
         switch (match) {
             case TASKS:
-                // Insert new values into the database
-                // Inserting values into tasks table
                 long id = db.insert(TABLE_NAME, null, values);
                 if ( id > 0 ) {
                     returnUri = ContentUris.withAppendedId(TaskContract.TaskEntry.CONTENT_URI, id);
@@ -101,34 +98,47 @@ public class TaskContentProvider extends ContentProvider {
                     throw new android.database.SQLException("Failed to insert row into " + uri);
                 }
                 break;
-            // Set the value for the returnedUri and write the default case for unknown URI's
-            // Default case throws an UnsupportedOperationException
             default:
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
         }
 
-        // Notify the resolver if the uri has been changed, and return the newly inserted URI
         getContext().getContentResolver().notifyChange(uri, null);
 
-        // Return constructed uri (this points to the newly inserted row of data)
         return returnUri;
     }
 
 
-    // Implement query to handle requests for data by URI
     @Override
     public Cursor query(@NonNull Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
 
-        // TODO (1) Get access to underlying database (read-only for query)
+        // COMPLETED (1) Get access to underlying database (read-only for query)
+        final SQLiteDatabase db = mTaskDbHelper.getReadableDatabase();
 
-        // TODO (2) Write URI match code and set a variable to return a Cursor
+        // COMPLETED (2) Write URI match code and set a variable to return a Cursor
+        int match = sUriMatcher.match(uri);
+        Cursor retCursor;
 
-        // TODO (3) Query for the tasks directory and write a default case
+        // COMPLETED (3) Query for the tasks directory and write a default case
+        switch (match) {
+            case TASKS:
+                retCursor =  db.query(TABLE_NAME,
+                        projection,
+                        selection,
+                        selectionArgs,
+                        null,
+                        null,
+                        sortOrder);
+                break;
+            default:
+                throw new UnsupportedOperationException("Unknown uri: " + uri);
+        }
 
-        // TODO (4) Set a notification URI on the Cursor and return that Cursor
+        // COMPLETED (4) Set a notification URI on the Cursor and return that Cursor
+        retCursor.setNotificationUri(getContext().getContentResolver(), uri);
 
-        throw new UnsupportedOperationException("Not yet implemented");
+        return retCursor;
+
     }
 
 
